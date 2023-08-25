@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Earth to Mars Communication</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Earth to Mars Communication</h1>
+        <h3>Message from Earth to Mars</h3>
+        <textarea id="messageFromEarth" placeholder="Enter your message"></textarea>
+        <button onclick="encodeMessage()">Encode</button>
+        <p><strong>Encoded Numeric Message:</strong></p>
+        <p id="encodedMessage"></p>
+
+        <h3>Message from Mars to Earth</h3>
+        <textarea id="messageFromMars" placeholder="Enter numeric message"></textarea>
+        <button onclick="decodeMessage()">Decode</button>
+        <p><strong>Decoded Message:</strong></p>
+        <p id="decodedMessage"></p>
+    </div>
+
+    <script>
+        // Your encoding and decoding functions here
+
+        function encodeMessage() {
+            const messageFromEarth = document.getElementById("messageFromEarth").value;
+            const encodedMessage = encodeMessageFunction(messageFromEarth);
+            document.getElementById("encodedMessage").textContent = encodedMessage;
+        }
+
+        function decodeMessage() {
+            const messageFromMars = document.getElementById("messageFromMars").value;
+            const decodedMessage = decodeMessageFunction(messageFromMars);
+            document.getElementById("decodedMessage").textContent = decodedMessage;
+        }
+    </script>
+</body>
+</html>
